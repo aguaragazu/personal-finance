@@ -21,7 +21,7 @@ import { useState } from "react";
 import UploadButton from "./upload-button";
 import ImportCard from "./import-card";
 
-import { transactions as transactionsSchema } from "@/db/schema";
+import { transactions as transactionsSchema } from "@/../db/schema";
 // account hook
 import { useSelectAccount } from "@/features/accounts/hooks/use-select-account";
 import { toast } from "sonner";

@@ -10,7 +10,6 @@ import useGetSummary from "@/features/summary/api/use-get-summary";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   Popover,
-  PopoverClose,
   PopoverContent,
   PopoverTrigger,
 } from "./ui/popover";
@@ -84,7 +83,7 @@ const DateFilter = () => {
           numberOfMonths={2}
         />
         <div className="p-4 w-full flex items-center gap-x-2 ">
-          <PopoverClose asChild>
+          <PopoverTrigger asChild>
             <Button
               disabled={!date?.from || !date?.to}
               onClick={onReset}
@@ -93,8 +92,8 @@ const DateFilter = () => {
             >
               Reset
             </Button>
-          </PopoverClose>
-          <PopoverClose asChild>
+          </PopoverTrigger>
+          <PopoverTrigger asChild>
             <Button
               disabled={!date?.from || !date?.to}
               onClick={() => pushToUrl(date)}
@@ -102,7 +101,7 @@ const DateFilter = () => {
             >
               Apply
             </Button>
-          </PopoverClose>
+          </PopoverTrigger>
         </div>
       </PopoverContent>
     </Popover>
